@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="/" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <environment names="Production">
+    <title>@ViewData["Title"]</title>
+    @Html.Raw(ViewData["Meta"])
+    @Html.Raw(ViewData["Links"])
+    @Html.Raw(ViewData["Styles"])
+    @*during development style does not extract from javascript*@
+    <link href="~/dist/styles.bundle.css" rel="stylesheet" asp-append-version="true" />
+  </environment>
+
+</head>
+<body>
+  @RenderBody()
+
+  <environment names="Production">
+    <!-- Here we're passing down any data to be used by grabbed and parsed by Angular -->
+    @Html.Raw(ViewData["TransferData"])
+  </environment>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

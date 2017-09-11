@@ -1,0 +1,19 @@
+<environment names="Production">
+  @Html.Raw(ViewData["SpaHtml"])
+  @section scripts {
+    <script src="~/dist/inline.bundle.js" asp-append-version="true"></script>
+    <script src="~/dist/polyfills.bundle.js" asp-append-version="true"></script>
+    <script src="~/dist/vendor.bundle.js" asp-append-version="true"></script>
+    <script src="~/dist/main.bundle.js" asp-append-version="true"></script>
+  }
+</environment>
+<environment names="Development">
+  @section scripts {
+    <app-root></app-root>
+    <script src="~/dist/inline.bundle.js" asp-append-version="true"></script>
+    <script src="~/dist/polyfills.bundle.js" asp-append-version="true"></script>
+    <script src="~/dist/vendor.bundle.js" asp-append-version="true"></script>
+    <script src="~/dist/styles.bundle.js" asp-append-version="true"></script>
+    <script src="~/dist/main.bundle.js" asp-append-version="true"></script>
+  }
+</environment>
