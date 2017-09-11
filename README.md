@@ -1,4 +1,4 @@
-###.net core 2 + Angular CLI with SSR
+### .net core 2 + Angular CLI with SSR
 
 You can check package.json to get all you need to get it run. Both .net and angular can run in command line. 
 
